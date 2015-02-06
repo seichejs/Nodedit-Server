@@ -454,7 +454,7 @@ server.put(commandRegEx, function (req, res, next) {
                 // Make sure it's a file
                 if (!fs.lstatSync(path).isDirectory()) {
                     // Write (binary encoding supports text and binary files)
-                    fs.writeFile(path, req.params.data, 'binary', function(err) {
+                    fs.writeFile(path, req.params.data, function(err) {
                         if(err) {
                             resError(107, err, res);
                         } else {
